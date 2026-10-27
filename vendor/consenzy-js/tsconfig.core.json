@@ -1,0 +1,9 @@
+{
+  "//": "Proves the core and server entries compile without DOM or Node typings, so they run unchanged in React Native, workers and Node.",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2020"],
+    "types": []
+  },
+  "include": ["src/index.ts", "src/server.ts"]
+}

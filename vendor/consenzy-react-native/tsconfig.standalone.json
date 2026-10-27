@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": { "@onfinance/consenzy": ["./types/consenzy-shim.d.ts"] }
+  },
+  "include": ["src", "__tests__", "types"]
+}

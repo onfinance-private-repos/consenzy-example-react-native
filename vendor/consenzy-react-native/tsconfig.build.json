@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.standalone.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noEmit": false,
+    "rewriteRelativeImportExtensions": true,
+    "types": []
+  },
+  "include": ["src"]
+}

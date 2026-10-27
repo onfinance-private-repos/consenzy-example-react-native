@@ -1,0 +1,57 @@
+{
+  "name": "@onfinance/consenzy-react-native",
+  "version": "0.1.0",
+  "description": "Consenzy by OnFinance for React Native: provider, hooks and prebuilt DPDP Act, 2023 consent, consent-manager and rights-request screens.",
+  "license": "Apache-2.0",
+  "homepage": "https://consenzy.onfinance.ai",
+  "keywords": [
+    "consenzy",
+    "onfinance",
+    "react-native",
+    "dpdp",
+    "dpdpa",
+    "consent",
+    "consent-management",
+    "privacy",
+    "india"
+  ],
+  "author": "OnFinance (https://onfinance.ai)",
+  "type": "commonjs",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "react-native": "src/index.ts",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "react-native": "./src/index.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck:sdk-source": "tsc --noEmit -p tsconfig.json --customConditions react-native",
+    "typecheck:standalone": "tsc --noEmit -p tsconfig.standalone.json",
+    "test": "jest",
+    "build": "rm -rf lib && tsc -p tsconfig.build.json && echo '{ \"type\": \"module\" }' > lib/package.json"
+  },
+  "peerDependencies": {
+    "@onfinance/consenzy": "^0.1.0",
+    "react": ">=18.2.0",
+    "react-native": ">=0.72.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

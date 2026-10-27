@@ -1,0 +1,95 @@
+{
+  "name": "@onfinance/consenzy",
+  "version": "0.1.0",
+  "description": "Consenzy by OnFinance: TypeScript client and embeddable consent banner web components for the Consenzy DPDP Act, 2023 consent and rights-request API.",
+  "license": "Apache-2.0",
+  "homepage": "https://consenzy.onfinance.ai",
+  "keywords": [
+    "consenzy",
+    "onfinance",
+    "dpdp",
+    "dpdpa",
+    "consent",
+    "consent-management",
+    "privacy",
+    "india",
+    "web-components",
+    "consent-banner"
+  ],
+  "author": "OnFinance (https://onfinance.ai)",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": [
+    "./dist/widget.js",
+    "./dist/widget.cjs",
+    "./src/widget/index.ts"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "react-native": "./src/index.ts",
+  "source": "./src/index.ts",
+  "exports": {
+    ".": {
+      "react-native": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./server": {
+      "import": {
+        "types": "./dist/server.d.ts",
+        "default": "./dist/server.js"
+      },
+      "require": {
+        "types": "./dist/server.d.cts",
+        "default": "./dist/server.cjs"
+      }
+    },
+    "./widget": {
+      "import": {
+        "types": "./dist/widget.d.ts",
+        "default": "./dist/widget.js"
+      },
+      "require": {
+        "types": "./dist/widget.d.cts",
+        "default": "./dist/widget.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "server": [
+        "./dist/server.d.ts"
+      ],
+      "widget": [
+        "./dist/widget.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.core.json --noEmit",
+    "test": "vitest run",
+    "test:integration": "CDM_DEV_API=1 vitest run tests/integration.test.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
